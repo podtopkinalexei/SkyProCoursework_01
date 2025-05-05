@@ -172,7 +172,7 @@ if __name__ == "__main__":
         path_file = "../data/operations.xlsx"
         logger.info(f"Загрузка данных из файла: {path_file}")
 
-        df = pd.read_excel(path_file, sheet_name="Отчет по операциям")
+        df = pd.read_excel(path_file)
         df = df[df["Статус"] == "OK"]
         logger.info(f"Загружено {len(df)} успешных операций")
 
@@ -182,8 +182,7 @@ if __name__ == "__main__":
 
         print("\nОтчет по категории 'Каршеринг':")
         result2 = get_spending_by_category(
-            df, "Каршеринг", "2021-12-31", filename="custom_transport_report.json"
-        )
+            df, "Каршеринг", "2021-12-31")
         print(result2)
 
         logger.info("Анализ завершен успешно")
