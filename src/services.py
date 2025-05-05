@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 
 
 def setup_logging():
+    """Функция настройки логирования"""
 
     log_dir = Path(__file__).parent.parent / "logs"
     log_dir.mkdir(exist_ok=True)
